@@ -1,6 +1,3 @@
-<?php
-    $hitung = $this->db->get_where('family', array('kategori' => 'Alumni', 'status' => 'menunggu'))->num_rows();
-?>
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
         <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
@@ -19,7 +16,7 @@
              
                 <li class="dropdown">
                     <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell"></i>  <span class="label label-primary"><?=$hitung?></span>
+                        <i class="fa fa-bell"></i>  <span class="label label-primary"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
                         <li>

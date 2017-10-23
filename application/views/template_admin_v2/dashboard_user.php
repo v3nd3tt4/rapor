@@ -14,9 +14,8 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Username</th>
                             <th>Nama</th>
-                            <th>Level</th>                      
+                            <th>Kategori</th>
                             <th>aksi</th>
                         </tr>
                     </thead>
@@ -29,10 +28,9 @@
                             <td><?=$no++?>.</td>
                             <td><?=$row->username?></td>
                             <td><?=$row->nama?></td>
-                            <td><?=$row->level?></td>
                             <td>
-                                <a href="<?=base_url()?>adminNew/home/edit_user/<?=$row->id?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> Edit </a>
-                                <a href="<?=base_url()?>admin/hapusadmin/<?=$row->username?>" onclick="return confirm('yakin akan menghapus data ini?')" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i> Hapus</a>
+                                <a href="<?=base_url()?>adminNew/home/edit_user/<?=$row->id_user?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> Edit </a>
+                                <a href="<?=base_url()?>admin/hapusadmin/<?=$row->id_user?>" onclick="return confirm('yakin akan menghapus data ini?')" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i> Hapus</a>
                             </td>
                         </tr>
                         <?php

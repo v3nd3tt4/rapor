@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Dashboard </title>
-    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/Logo_IAIN_Raden_Intan_Bandar_Lampung.png"/>
+    <!-- <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/Logo_IAIN_Raden_Intan_Bandar_Lampung.png"/> -->
     <link href="<?=base_url()?>assets/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 

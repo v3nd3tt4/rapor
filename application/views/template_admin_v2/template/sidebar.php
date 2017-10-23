@@ -25,8 +25,8 @@
 
                     </ul> -->
                 </li>
-                <li <?php  if($link == 'dosen'){?>class="active" <?php }?>>
-                    <a href="<?=base_url()?>adminNew/home/dosen"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <span class="nav-label">Dosen</span><!-- <span class="fa arrow"></span> --></a>
+                <li <?php  if($link == 'guru'){?>class="active" <?php }?>>
+                    <a href="<?=base_url()?>home/guru"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <span class="nav-label">Guru</span><!-- <span class="fa arrow"></span> --></a>
                     <!-- <ul class="nav nav-second-level collapse">
                         <li><a href="transaction.html">Used Oil</a></li>
                         <li><a href="newoil.html">New Oil, Fuel & Others</a></li>
@@ -53,7 +53,7 @@
  <span class="nav-label">Galeri</span></a>
                 </li>
                 <li <?php  if($link == 'user'){?>class="active" <?php }?>>
-                    <a href="<?=base_url()?>adminNew/home/user"><i class="fa fa-user" aria-hidden="true"></i>
+                    <a href="<?=base_url()?>home/user"><i class="fa fa-user" aria-hidden="true"></i>
  <span class="nav-label">User</span></a>
                 </li>
             </ul>

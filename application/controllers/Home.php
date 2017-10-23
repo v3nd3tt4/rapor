@@ -18,8 +18,7 @@ class Home extends CI_Controller {
 	public function index(){
 		$data = array(
 			'page' => 'template_admin_v2/dashboard',
-			'link' => 'home',
-			'list' => $this->db->get('post')
+			'link' => 'home'
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}
@@ -139,7 +138,7 @@ class Home extends CI_Controller {
 		$data = array(
 			'page' => 'template_admin_v2/dashboard_user',
 			'link' => 'user',
-			'list' => $this->db->get('user')
+			'list' => $this->db->get('tb_user')
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}
@@ -179,4 +178,145 @@ class Home extends CI_Controller {
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}
 
+	public function guru(){
+		$data = array(
+			'page' => 'template_admin_v2/dashboard_guru',
+			'link' => 'guru',
+			'list' => $this->db->get('tb_guru')
+		);
+		$this->load->view('template_admin_v2/template/wrapper', $data);
+	}
+
+	public function tambah_guru(){
+		$data = array(
+			'page' => 'template_admin_v2/tambah_guru',
+			'link' => 'guru',
+		);
+		$this->load->view('template_admin_v2/template/wrapper', $data);
+	}
+
+	public function simpan_guru(){
+		$cek = $this->db->get_where('tb_guru', array('kodeguru' => $this->input->post('kodeguru', true)));
+		$cek_username = $this->db->get_where('tb_guru', array('username' => $this->input->post('username', true)));
+
+		if($cek->num_rows() != 0){
+			$this->session->set_flashdata(
+			    'msg', 
+			    '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Maaf!</strong> Kode Guru Sudah Ada !</div>'
+			);
+			redirect(base_url().'home/tambah_guru'); //location
+			exit();
+		}
+
+		if($cek_username->num_rows() != 0){
+			$this->session->set_flashdata(
+			    'msg', 
+			    '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Maaf!</strong> Username Sudah Ada !</div>'
+			);
+			redirect(base_url().'home/tambah_guru'); //location
+			exit();
+		}
+
+		$data = array(
+			'kodeguru' => $this->input->post('kodeguru', true),
+			'namaguru' => $this->input->post('namaguru', true),
+			'alamat' => $this->input->post('alamat', true),
+			'telp' => $this->input->post('telp', true),
+			'jk' => $this->input->post('jk', true),
+			'agama' => $this->input->post('agama', true),
+			'tempatlahir' => $this->input->post('tempatlahir', true),
+			'tgllahir' => $this->input->post('tgllahir', true),
+			'username' => $this->input->post('username', true),
+			'password' => password_hash($this->input->post('password', true), PASSWORD_DEFAULT),
+		);
+		$simpan = $this->db->insert('tb_guru', $data);
+		if($simpan){
+			$this->session->set_flashdata(
+			    'msg', 
+			    '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Success!</strong> Data berhasil disimpan !</div>'
+			);
+			redirect(base_url().'home/tambah_guru'); //location
+		}
+		else{
+			$this->session->set_flashdata(
+			    'msg', 
+			    '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Peringatan!</strong> Data gagal disimpan !</div>'
+			);
+			redirect(base_url().'home/tambah_guru'); //location
+		}
+	}
+
+
+	public function hapus_guru($idguru){
+		$this->db->where(array('idguru' => $idguru));
+		$hapus = $this->db->delete('tb_guru');
+		if($hapus){
+			$this->session->set_flashdata(
+			    'msg', 
+			    '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Success!</strong> Data berhasil dihapus !</div>'
+			);
+			redirect(base_url().'home/guru'); //location
+		}
+		else{
+			$this->session->set_flashdata(
+			    'msg', 
+			    '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Peringatan!</strong> Data gagal dihapus !</div>'
+			);
+			redirect(base_url().'home/guru'); //location
+		}
+	}
+
+	public function lihat_guru($idguru){
+		$data = array(
+			'page' => 'template_admin_v2/lihat_guru',
+			'link' => 'guru',
+			'list' => $this->db->get_where('tb_guru', array('idguru' => $idguru))
+		);
+		$this->load->view('template_admin_v2/template/wrapper', $data);
+	}
+
+	public function update_guru(){
+		if($this->input->post('password', true) != ''){
+			$data = array(
+				'kodeguru' => $this->input->post('kodeguru', true),
+				'namaguru' => $this->input->post('namaguru', true),
+				'alamat' => $this->input->post('alamat', true),
+				'telp' => $this->input->post('telp', true),
+				'jk' => $this->input->post('jk', true),
+				'agama' => $this->input->post('agama', true),
+				'tempatlahir' => $this->input->post('tempatlahir', true),
+				'tgllahir' => $this->input->post('tgllahir', true),
+				'username' => $this->input->post('username', true),
+				'password' => password_hash($this->input->post('password', true), PASSWORD_DEFAULT)
+			);
+		}else{
+			$data = array(
+				'kodeguru' => $this->input->post('kodeguru', true),
+				'namaguru' => $this->input->post('namaguru', true),
+				'alamat' => $this->input->post('alamat', true),
+				'telp' => $this->input->post('telp', true),
+				'jk' => $this->input->post('jk', true),
+				'agama' => $this->input->post('agama', true),
+				'tempatlahir' => $this->input->post('tempatlahir', true),
+				'tgllahir' => $this->input->post('tgllahir', true),
+				'username' => $this->input->post('username', true)
+			);
+		}
+		$this->db->where(array('idguru' => $this->input->post('idguru', true)));
+		$simpan = $this->db->update('tb_guru', $data);
+		if($simpan){
+			$this->session->set_flashdata(
+			    'msg', 
+			    '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Success!</strong> Data berhasil diupdate !</div>'
+			);
+			redirect(base_url().'home/lihat_guru/'.$this->input->post('idguru', true)); //location
+		}
+		else{
+			$this->session->set_flashdata(
+			    'msg', 
+			    '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Peringatan!</strong> Data gagal diupdate !</div>'
+			);
+			redirect(base_url().'home/lihat_guru/'.$this->input->post('idguru', true)); //location
+		}
+	}
 }
