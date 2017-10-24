@@ -36,9 +36,9 @@
                         <li><a href="mcomparation.html">Machine Comparation</a></li>
                     </ul> -->
                 </li>
-                <li <?php  if($link == 'alumni'){?>class="active" <?php }?>>
-                    <a href="<?=base_url()?>adminNew/home/alumni"><i class="fa fa-users" aria-hidden="true"></i>
- <span class="nav-label">Alumni</span></a>
+                <li <?php  if($link == 'pegawai'){?>class="active" <?php }?>>
+                    <a href="<?=base_url()?>pegawai"><i class="fa fa-users" aria-hidden="true"></i>
+ <span class="nav-label">Pegawai</span></a>
                 </li>
                 <li <?php  if($link == 'kotak_saran'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>adminNew/home/kotak_saran"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
