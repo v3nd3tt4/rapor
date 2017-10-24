@@ -40,9 +40,9 @@
                     <a href="<?=base_url()?>pegawai"><i class="fa fa-users" aria-hidden="true"></i>
  <span class="nav-label">Pegawai</span></a>
                 </li>
-                <li <?php  if($link == 'kotak_saran'){?>class="active" <?php }?>>
-                    <a href="<?=base_url()?>adminNew/home/kotak_saran"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
- <span class="nav-label">Kotak Saran</span></a>
+                <li <?php  if($link == 'siswa'){?>class="active" <?php }?>>
+                    <a href="<?=base_url()?>siswa"><i class="fa fa-user" aria-hidden="true"></i>
+ <span class="nav-label">Siswa</span></a>
                 </li>
                  <li <?php  if($link == 'pengajuan_judul'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>adminNew/home/pengajuan_judul"><i class="fa fa-book" aria-hidden="true"></i>

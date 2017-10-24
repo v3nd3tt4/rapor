@@ -1,15 +1,15 @@
 <div class="row">
-    <form action ="<?=base_url()?>pegawai/update_pegawai" method="POST">
+    <form action ="<?=base_url()?>siswa/update_siswa" method="POST">
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <div class="row">
                     <div class="col-md-9">
-                        <h2>Data Pegawai</h2>
+                        <h2>Data Siswa</h2>
                     </div>
                     <div class="col-md-3">
                         <div class="pull-right">
-                            <a href="<?=base_url()?>pegawai" class="btn btn-danger" ><i class="fa fa-arrow-left" aria-hidden="true"></i>  Kembali</a>  
+                            <a href="<?=base_url()?>siswa" class="btn btn-danger" ><i class="fa fa-arrow-left" aria-hidden="true"></i>  Kembali</a>  
                             <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>  Update</button>
                         </div>
                     </div>
@@ -17,15 +17,14 @@
             </div>
             <div class="ibox-content">
             	<?=@$this->session->flashdata('msg')?>
-                <input type="hidden" name="idguru" value="<?=$list->row()->idpegawai?>" />
-
+                <input type="hidden" name="idsiswa" value="<?=$list->row()->idsiswa?>" />
                 <div class="form-group">
-                    <label>Kode:</label>
-                    <input type="text" name="kodeguru" class="form-control" value="<?=$list->row()->kodepegawai?>" required />
+                    <label>NIS:</label>
+                    <input type="text" name="nis" class="form-control" value="<?=$list->row()->nis?>" required />
                 </div>
                 <div class="form-group">
                     <label>Nama:</label>
-                    <input type="text" name="namaguru" class="form-control" value="<?=$list->row()->namapegawai?>" required/>
+                    <input type="text" name="namasiswa" class="form-control" value="<?=$list->row()->namasiswa?>"  required/>
                 </div>
                 <div class="form-group">
                     <label>Tempat Lahir:</label>
@@ -56,12 +55,40 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Nomor Telpon:</label>
-                    <input type="text" name="telp" class="form-control" value="<?=$list->row()->telp?>" required/>
+                    <label>Nomor Telpon (ayah atau Ibu):</label>
+                    <input type="text" name="telpayah" class="form-control" value="<?=$list->row()->telpayah?>" required/>
                 </div>
                 <div class="form-group">
-                    <label>Divisi:</label>
-                    <input type="text" name="divisi" class="form-control" value="<?=$list->row()->divisi?>" required/>
+                    <label>Nama Ayah:</label>
+                    <input type="text" name="namaayah" class="form-control" value="<?=$list->row()->namaayah?>" required/>
+                </div>
+                <div class="form-group">
+                    <label>Pekerjaan Ayah:</label>
+                    <input type="text" name="pekerjaanayah" class="form-control" value="<?=$list->row()->pekerjaanayah?>" required/>
+                </div>
+                <div class="form-group">
+                    <label>Nama Ibu:</label>
+                    <input type="text" name="namaibu" class="form-control" value="<?=$list->row()->namaibu?>" required/>
+                </div>
+                <div class="form-group">
+                    <label>Pekerjaan Ibu:</label>
+                    <input type="text" name="pekerjaanibu" class="form-control" value="<?=$list->row()->pekerjaanibu?>" required/>
+                </div>
+                <div class="form-group">
+                    <label>Nama Wali:</label>
+                    <input type="text" name="namawali" class="form-control" value="<?=$list->row()->namawali?>" required/>
+                </div>
+                <div class="form-group">
+                    <label>Pekerjaan Wali:</label>
+                    <input type="text" name="pekerjaanwali" class="form-control" value="<?=$list->row()->pekerjaanwali?>" required/>
+                </div>
+                <div class="form-group">
+                    <label>Asal Sekolah:</label>
+                    <input type="text" name="asalsekolah" class="form-control" value="<?=$list->row()->asalsekolah?>" required/>
+                </div>
+                <div class="form-group">
+                    <label>Tanggal Masuk Sekolah:</label>
+                    <input type="date" name="tglmasuksekolah" class="form-control" value="<?=$list->row()->tglmasuksekolah?>" required/>
                 </div>
                 <div class="form-group">
                     <label>Alamat:</label>

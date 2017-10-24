@@ -39,7 +39,7 @@ class Pegawai extends CI_Controller {
 		if($cek->num_rows() != 0){
 			$this->session->set_flashdata(
 			    'msg', 
-			    '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Maaf!</strong> Kode Guru Sudah Ada !</div>'
+			    '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Maaf!</strong> Kode Pegawai Sudah Ada !</div>'
 			);
 			redirect(base_url().'home/tambah_guru'); //location
 			exit();
