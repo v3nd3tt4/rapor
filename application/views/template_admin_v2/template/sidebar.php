@@ -44,9 +44,9 @@
                     <a href="<?=base_url()?>siswa"><i class="fa fa-user" aria-hidden="true"></i>
  <span class="nav-label">Siswa</span></a>
                 </li>
-                 <li <?php  if($link == 'pengajuan_judul'){?>class="active" <?php }?>>
-                    <a href="<?=base_url()?>adminNew/home/pengajuan_judul"><i class="fa fa-book" aria-hidden="true"></i>
- <span class="nav-label">Pengajuan Judul</span></a>
+                 <li <?php  if($link == 'kelas'){?>class="active" <?php }?>>
+                    <a href="<?=base_url()?>kelas"><i class="fa fa-university" aria-hidden="true"></i>
+ <span class="nav-label">kelas</span></a>
                 </li>
                 <li <?php  if($link == 'galeri'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>adminNew/home/galeri"><i class="fa fa-folder-open" aria-hidden="true"></i>
