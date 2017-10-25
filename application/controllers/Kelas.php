@@ -132,5 +132,13 @@ class kelas extends CI_Controller {
 			redirect(base_url().'kelas/lihat_kelas/'.$this->input->post('idkelas', true)); //location
 		}
 	}
+	public function siswa_kelas($idguru){
+		$data = array(
+			'page' => 'template_admin_v2/lihat_siswa_di_kelas',
+			'link' => 'kelas',
+			'list' => $this->db->get_where('tb_siswa', array('idkelas' => $idguru))
+		);
+		$this->load->view('template_admin_v2/template/wrapper', $data);
+	}
 
 }

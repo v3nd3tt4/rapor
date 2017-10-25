@@ -38,6 +38,7 @@
                                 <!-- <a href="<?=base_url()?>home/edit_guru/<?=$row->idguru?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> Edit </a> -->
                                 <a href="<?=base_url()?>kelas/hapus_kelas/<?=$row->idkelas?>" class="btn btn-xs btn-success" onclick="return confirm('yakin akan menghapus data ini?')"><i class="fa fa-remove"></i>  Hapus </a>
                                 <a href="<?=base_url()?>kelas/lihat_kelas/<?=$row->idkelas?>" target="_blank" class="btn btn-xs btn-danger"><i class="fa fa-eye"></i> Lihat </a>
+                                <a href="<?=base_url()?>kelas/siswa_kelas/<?=$row->idkelas?>" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-user"></i> Siswa </a>
                             </td>
                         </tr>
                         <?php } ?>
