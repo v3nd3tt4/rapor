@@ -27,6 +27,15 @@
                     <input type="text" name="namasiswa" class="form-control" value="<?=$list->row()->namasiswa?>"  required/>
                 </div>
                 <div class="form-group">
+                    <label>Kelas:</label>
+                    <select name="idkelas" class="form-control" required>
+                        <option value="">--pilih kelas--</option>
+                        <?php foreach($kelas->result() as $kelas){?>
+                        <option value="<?=$kelas->idkelas?>" <?=$list->row()->idkelas == $kelas->idkelas ? 'selected' : ''?>><?=$kelas->kodekelas.' - '.$kelas->namakelas?></option>
+                        <?php }?>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Tempat Lahir:</label>
                     <input type="text" name="tempatlahir" class="form-control" value="<?=$list->row()->tempatlahir?>" required/>
                 </div>

@@ -19,6 +19,7 @@
                             <th>No.</th>
                             <th>NIS</th>
                             <th>Nama</th>
+                            <th>Kelas</th>
                             <th>aksi</th>
                         </tr>
                     </thead>
@@ -31,6 +32,8 @@
                             <td><?=$no++?>.</td>
                             <td><?=$row->nis?></td>
                             <td><?=$row->namasiswa?></td>
+                            <td>
+                            <td><?=$row->kodekelas?> - <?=$row->namakelas?></td>
                             <td>
                                 <!-- <a href="<?=base_url()?>home/edit_guru/<?=$row->idguru?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> Edit </a> -->
                                 <a href="<?=base_url()?>siswa/hapus_siswa/<?=$row->idsiswa?>" class="btn btn-xs btn-success" onclick="return confirm('yakin akan menghapus data ini?')"><i class="fa fa-remove"></i>  Hapus </a>

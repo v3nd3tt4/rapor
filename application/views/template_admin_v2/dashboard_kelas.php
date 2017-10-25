@@ -32,7 +32,7 @@
                             <td><?=$no++?>.</td>
                             <td><?=$row->kodekelas?></td>
                             <td><?=$row->namakelas?></td>
-                            <td></td>
+                            <td><?=$row->kodeguru?> - <?=$row->namaguru?></td>
                             <td>
 
                                 <!-- <a href="<?=base_url()?>home/edit_guru/<?=$row->idguru?>" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> Edit </a> -->

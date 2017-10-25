@@ -16,10 +16,13 @@ class siswa extends CI_Controller {
 	}
 
 	public function index(){
+		$this->db->from('tb_siswa');
+		$this->db->join('tb_kelas', 'tb_kelas.idkelas = tb_siswa.idkelas');
+		$data = $this->db->get();
 		$data = array(
 			'page' => 'template_admin_v2/dashboard_siswa',
 			'link' => 'siswa',
-			'list' => $this->db->get('tb_siswa')
+			'list' => $data
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}
@@ -28,6 +31,7 @@ class siswa extends CI_Controller {
 		$data = array(
 			'page' => 'template_admin_v2/tambah_siswa',
 			'link' => 'siswa',
+			'kelas' => $this->db->get('tb_kelas')
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}
@@ -60,6 +64,7 @@ class siswa extends CI_Controller {
 			'alamat' => $this->input->post('alamat', true),
 			'telpayah' => $this->input->post('telpayah', true),
 			'jk' => $this->input->post('jk', true),
+			'idkelas' => $this->input->post('idkelas', true),
 			'agama' => $this->input->post('agama', true),
 			'tempatlahir' => $this->input->post('tempatlahir', true),
 			'namaayah' => $this->input->post('namaayah', true),
@@ -115,7 +120,8 @@ class siswa extends CI_Controller {
 		$data = array(
 			'page' => 'template_admin_v2/lihat_siswa',
 			'link' => 'siswa',
-			'list' => $this->db->get_where('tb_siswa', array('idsiswa' => $idguru))
+			'list' => $this->db->get_where('tb_siswa', array('idsiswa' => $idguru)),
+			'kelas' => $this->db->get('tb_kelas')
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}
@@ -128,6 +134,7 @@ class siswa extends CI_Controller {
 				'alamat' => $this->input->post('alamat', true),
 				'telpayah' => $this->input->post('telpayah', true),
 				'jk' => $this->input->post('jk', true),
+				'idkelas' => $this->input->post('idkelas', true),
 				'agama' => $this->input->post('agama', true),
 				'tempatlahir' => $this->input->post('tempatlahir', true),
 				'namaayah' => $this->input->post('namaayah', true),
@@ -149,6 +156,7 @@ class siswa extends CI_Controller {
 				'alamat' => $this->input->post('alamat', true),
 				'telpayah' => $this->input->post('telpayah', true),
 				'jk' => $this->input->post('jk', true),
+				'idkelas' => $this->input->post('idkelas', true),
 				'agama' => $this->input->post('agama', true),
 				'tempatlahir' => $this->input->post('tempatlahir', true),
 				'namaayah' => $this->input->post('namaayah', true),

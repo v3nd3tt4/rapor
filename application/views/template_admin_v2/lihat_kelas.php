@@ -40,7 +40,12 @@
                 </div>
                 <div class="form-group">
                     <label>Wali kelas:</label>
-                    <input type="text" name="namawalikelas" class="form-control" value="<?=$list->row()->namawalikelas ?>" required/>
+                    <select name="namawalikelas" class="form-control" required>
+                        <option value="">--pilih wali kelas--</option>
+                        <?php foreach($guru->result() as $guru){?>
+                        <option value="<?=$guru->idguru?>" <?=$list->row()->namawalikelas == $guru->idguru ? 'selected' : ''?>><?=$guru->kodeguru?> - <?=$guru->namaguru?></option>
+                        <?php }?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Semester:</label>

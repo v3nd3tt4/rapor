@@ -16,10 +16,14 @@ class kelas extends CI_Controller {
 	}
 
 	public function index(){
+		$this->db->from('tb_kelas');
+		$this->db->join('tb_guru', 'tb_guru.idguru = tb_kelas.namawalikelas', 'left');
+		$row = $this->db->get();
 		$data = array(
 			'page' => 'template_admin_v2/dashboard_kelas',
 			'link' => 'kelas',
-			'list' => $this->db->get('tb_kelas')
+			'list' => $row,
+
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}
@@ -28,6 +32,7 @@ class kelas extends CI_Controller {
 		$data = array(
 			'page' => 'template_admin_v2/tambah_kelas',
 			'link' => 'kelas',
+			'guru' => $this->db->get('tb_guru'),
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}
@@ -94,7 +99,8 @@ class kelas extends CI_Controller {
 		$data = array(
 			'page' => 'template_admin_v2/lihat_kelas',
 			'link' => 'kelas',
-			'list' => $this->db->get_where('tb_kelas', array('idkelas' => $idguru))
+			'list' => $this->db->get_where('tb_kelas', array('idkelas' => $idguru)),
+			'guru' => $this->db->get('tb_guru'),
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}
