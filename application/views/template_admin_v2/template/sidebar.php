@@ -17,14 +17,14 @@
                         IN+
                     </div>
                 </li>
-                    <li <?php  if($link == 'home'){?>class="active" <?php }?>>
-                    <a href="<?=base_url()?>adminNew/home"><i class="fa fa-th-large"></i> <span class="nav-label">Artikel</span> <!-- <span class="fa arrow"></span> --></a>
-                    <!-- <ul class="nav nav-second-level">
+                <!-- <li <?php  if($link == 'home'){?>class="active" <?php }?>>
+                    <a href="<?=base_url()?>adminNew/home"><i class="fa fa-th-large"></i> <span class="nav-label">Artikel</span> <!-- <span class="fa arrow"></span> </a>
+                    <ul class="nav nav-second-level">
                         <li class="active"><a href="index.html">Dashboard FMC</a></li>
                         <li><a href="reguler.html">Dashboard V.2</a></li>
 
-                    </ul> -->
-                </li>
+                    </ul>
+                </li> -->
                 <li <?php  if($link == 'guru'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>home/guru"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <span class="nav-label">Guru</span><!-- <span class="fa arrow"></span> --></a>
                     <!-- <ul class="nav nav-second-level collapse">
@@ -52,10 +52,10 @@
                     <a href="<?=base_url()?>predikat"><i class="fa fa-folder-open" aria-hidden="true"></i>
  <span class="nav-label">Predikat</span></a>
                 </li>
-                <li <?php  if($link == 'user'){?>class="active" <?php }?>>
+                <!-- <li <?php  if($link == 'user'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>home/user"><i class="fa fa-user" aria-hidden="true"></i>
  <span class="nav-label">User</span></a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </nav>
