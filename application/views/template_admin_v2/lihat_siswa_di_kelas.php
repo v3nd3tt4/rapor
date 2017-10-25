@@ -28,7 +28,7 @@
                         ?>                        
                         <tr>
                             <td><?=$no++?>.</td>
-                            <td><a href="<?=base_url()?>siswa/lihat_siswa/<?=$row->idsiswa?>"><?=$row->nis?></a></td>
+                            <td><a href="<?=base_url()?>siswa/lihat_siswa/<?=$row->idsiswa?>" target="_blank"><?=$row->nis?></a></td>
                             <td><?=$row->namasiswa?></td>
                         <?php } ?>
                     </tbody>
