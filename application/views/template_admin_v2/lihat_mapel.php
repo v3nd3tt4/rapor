@@ -28,7 +28,13 @@
                 </div>
                 <div class="form-group">
                     <label>Kategori Mata Pelajaran:</label>
-                    <input type="text" name="kategorimapel" class="form-control" value="<?=$list->row()->kategorimapel?>" required/>
+                    <select name="kategorimapel" class="form-control" required/>
+                        <option value="">--pilih--</option>
+                        <option value="normatif" <?=$list->row()->kategorimapel == 'normatif' ? 'selected' : '' ?>>normatif</option>
+                        <option value="adaptif" <?=$list->row()->kategorimapel == 'adaptif' ? 'selected' : '' ?>>adaptif</option>
+                        <option value="produktif" <?=$list->row()->kategorimapel == 'produktif' ? 'selected' : '' ?>>produktif</option>
+                        <option value="mulok" <?=$list->row()->kategorimapel == 'mulok' ? 'selected' : '' ?>>mulok</option>
+                    </select>
                 </div>
             </div>
         </div>

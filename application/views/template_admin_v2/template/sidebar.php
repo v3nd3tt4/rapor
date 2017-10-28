@@ -7,7 +7,7 @@
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?=$this->session->userdata('nama')?></strong>
-                            </span> <span class="text-muted text-xs block">Bimbingan Konseling <b class="caret"></b></span> </span> </a>
+                            </span> <span class="text-muted text-xs block">Raport <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                           
                             <li><a href="<?=base_url()?>adminNew/home/logout">Logout</a></li>
@@ -55,6 +55,10 @@
                 <li <?php  if($link == 'mapel'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>mapel"><i class="fa fa-folder-open" aria-hidden="true"></i>
  <span class="nav-label">Mata Pelajaran</span></a>
+                </li>
+                <li <?php  if($link == 'nilai'){?>class="active" <?php }?>>
+                    <a href="<?=base_url()?>nilai"><i class="fa fa-file-text" aria-hidden="true"></i>
+ <span class="nav-label">Nilai</span></a>
                 </li>
                 <!-- <li <?php  if($link == 'user'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>home/user"><i class="fa fa-user" aria-hidden="true"></i>

@@ -27,7 +27,13 @@
                 </div>
                 <div class="form-group">
                     <label>Kategori Mata Pelajaran:</label>
-                    <input type="text" name="kategorimapel" class="form-control" value="<?=isset($_POST['kategorimapel']) ? $_POST['kategorimapel'] : '' ?>" required/>
+                    <select name="kategorimapel" class="form-control" value="<?=isset($_POST['kategorimapel']) ? $_POST['kategorimapel'] : '' ?>" required/>
+                        <option value="">--pilih--</option>
+                        <option value="normatif">normatif</option>
+                        <option value="adaptif">adaptif</option>
+                        <option value="produktif">produktif</option>
+                        <option value="mulok">mulok</option>
+                    </select>
                 </div>
             </div>
         </div>

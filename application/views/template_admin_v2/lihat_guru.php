@@ -60,6 +60,14 @@
                     <input type="text" name="telp" class="form-control" value="<?=$list->row()->telp?>" required/>
                 </div>
                 <div class="form-group">
+                    <label>Status Kepegawaian:</label>
+                    <input type="text" name="statuskepegawaian" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <label>Jenis PTK:</label>
+                    <input type="text" name="jenisptk" class="form-control" required/>
+                </div>
+                <div class="form-group">
                     <label>Alamat:</label>
                     <textarea name="alamat" class="form-control" style="resize: none" required><?=$list->row()->alamat?></textarea>
                 </div>
