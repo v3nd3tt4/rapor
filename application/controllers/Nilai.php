@@ -43,7 +43,9 @@ class Nilai extends CI_Controller {
 	public function isi_nilai_siswa(){
 		$data = array(
 			'page' => 'template_admin_v2/isi_nilai_siswa',
-			'link' => 'nilai'
+			'link' => 'nilai', 
+			'siswa' => $this->db->get_where('tb_siswa', array('idsiswa' => $this->input->get('id_siswa', true))),
+			'kelas' => $this->db->get_where('tb_kelas', array('idkelas' => $this->input->get('id_kelas', true))),
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}

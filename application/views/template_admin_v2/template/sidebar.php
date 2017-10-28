@@ -49,7 +49,7 @@
  <span class="nav-label">kelas</span></a>
                 </li>
                 <li <?php  if($link == 'predikat'){?>class="active" <?php }?>>
-                    <a href="<?=base_url()?>predikat"><i class="fa fa-folder-open" aria-hidden="true"></i>
+                    <a href="<?=base_url()?>predikat"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
  <span class="nav-label">Predikat</span></a>
                 </li>
                 <li <?php  if($link == 'mapel'){?>class="active" <?php }?>>

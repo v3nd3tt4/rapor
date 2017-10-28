@@ -60,7 +60,8 @@
                             <td><?=$row->nis?></td>
                             <td><?=$row->namasiswa?></td>
                             <td>
-                                <a href="<?=base_url()?>nilai/isi_nilai_siswa?id_siswa=<?=$row->idsiswa?>&id_kelas=<?=$kelas->row()->bidangstudi?>" target="_blank" class="btn btn-xs btn-danger"><i class="fa fa-eye"></i> Isi Nilai </a>
+                                <a href="<?=base_url()?>nilai/isi_nilai_siswa?id_siswa=<?=$row->idsiswa?>&id_kelas=<?=$kelas->row()->idkelas?>" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> Lihat Nilai </a>  
+                                <a href="<?=base_url()?>nilai/isi_nilai_siswa?id_siswa=<?=$row->idsiswa?>&id_kelas=<?=$kelas->row()->idkelas?>" target="_blank" class="btn btn-xs btn-danger"><i class="fa fa-pencil"></i> Isi Nilai </a>
                             </td>
                         </tr>
                         <?php } ?>
