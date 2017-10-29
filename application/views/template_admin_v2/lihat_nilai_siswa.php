@@ -4,7 +4,7 @@
             <div class="ibox-title">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2>Isi Nilai</h2>
+                        <h2>Lihat Nilai</h2>
                     </div>
                     <div class="col-md-4">
                         
@@ -81,11 +81,7 @@
                     </div>
                 </div>
                 <hr/>
-                
-                <?php if($cek_nilai->num_rows() != 0){?>
-                    <div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Info!</strong> Anda sudah mengisi nilai ini !</div>
-                <?php }else{?>
-                <form action="<?=base_url()?>nilai/simpan_nilai" method="POST">
+                <form action="<?=base_url()?>nilai/update_nilai" method="POST">
                     <?=@$this->session->flashdata('msg')?>
                     <input type="hidden" name="id_siswa" value="<?=$this->input->get('id_siswa', true)?>"/>
                     <input type="hidden" name="nis" value="<?=$siswa->row()->nis?>"/>
@@ -100,53 +96,52 @@
                         <select name="guru" class="form-control" required>
                             <option value="">--pilih--</option>
                             <?php foreach($guru->result() as $guru){?>
-                            <option value="<?=$guru->kodeguru?>"><?=$guru->kodeguru?> - <?=$guru->namaguru?></option>
+                            <option value="<?=$guru->kodeguru?>" <?=$cek_nilai->row()->kodeguru ? 'selected' : ''?>><?=$guru->kodeguru?> - <?=$guru->namaguru?></option>
                             <?php }?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>SK7:</label>
-                        <input type="text" name="sk7" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$this->input->post('sk7', true) ? $this->input->post('sk7', true) : '0'?>" required/>
+                        <input type="text" name="sk7" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$cek_nilai->row()->sk7?>" required/>
                     </div>
                     <div class="form-group">
                         <label>SK8:</label>
-                        <input type="text" name="sk8" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$this->input->post('sk8', true) ? $this->input->post('sk8', true) : '0'?>" required/>
+                        <input type="text" name="sk8" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$cek_nilai->row()->sk8?>" required/>
                     </div>
                     <div class="form-group">
                         <label>SK9:</label>
-                        <input type="text" name="sk9" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$this->input->post('sk9', true) ? $this->input->post('sk9', true) : '0'?>" required/>
+                        <input type="text" name="sk9" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$cek_nilai->row()->sk9?>" required/>
                     </div>
                     <div class="form-group">
                         <label>SK10:</label>
-                        <input type="text" name="sk10" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$this->input->post('sk10', true) ? $this->input->post('sk10', true) : '0'?>" required/>
+                        <input type="text" name="sk10" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$cek_nilai->row()->sk10?>" required/>
                     </div>
                     <div class="form-group">
                         <label>Ujian Tengah Semester:</label>
-                        <input type="text" name="uts" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$this->input->post('uts', true) ? $this->input->post('uts', true) : '0'?>" required/>
+                        <input type="text" name="uts" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$cek_nilai->row()->uts?>" required/>
                     </div>
                     <div class="form-group">
                         <label>Ujian Akhir Semester:</label>
-                        <input type="text" name="uas" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$this->input->post('uas', true) ? $this->input->post('uas', true) : '0'?>" required/>
+                        <input type="text" name="uas" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$cek_nilai->row()->us?>" required/>
                     </div>
                     <div class="form-group">
                         <label>AfAktif:</label>
-                        <input type="text" name="afaktif" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$this->input->post('afaktif', true) ? $this->input->post('afaktif', true) : '0'?>" required/>
+                        <input type="text" name="afaktif" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$cek_nilai->row()->afaktif?>" required/>
                     </div>
                     <div class="form-group">
                         <label>Psycom:</label>
-                        <input type="text" name="psycom" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$this->input->post('psycom', true) ? $this->input->post('psycom', true) : '0'?>" required/>
+                        <input type="text" name="psycom" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$cek_nilai->row()->psycom?>" required/>
                     </div>
                     <div class="form-group">
                         <label>KKM:</label>
-                        <input type="text" name="kkm" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$this->input->post('kkm', true) ? $this->input->post('kkm', true) : '0'?>" required/>
+                        <input type="text" name="kkm" class="form-control" placeholder="Jika tidak ada isi angka 0" value="<?=$cek_nilai->row()->kkm?>" required/>
                     </div>
                     <div class="form-group">
                         <label>Deskripsi:</label>
-                        <textarea name="deskripsi" class="form-control" style="resize: none" required><?=$this->input->post('deskripsi', true) ? $this->input->post('deskripsi', true) : '-'?></textarea>
+                        <textarea name="deskripsi" class="form-control" style="resize: none" required><?=$cek_nilai->row()->deskripsi?></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
                 </form>
-                <?php }?>
             </div>
         </div>
     </div>

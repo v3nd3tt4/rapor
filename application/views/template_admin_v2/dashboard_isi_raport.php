@@ -4,7 +4,7 @@
             <div class="ibox-title">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2>Isi Nilai</h2>
+                        <h2>Isi Raport</h2>
                     </div>
                     <div class="col-md-4">
                         
@@ -12,22 +12,13 @@
                 </div>
             </div>
             <div class="ibox-content">
-                <form action="<?=base_url()?>nilai/siswa_kelas" method="POST">
+                <form action="<?=base_url()?>nilai/list_siswa_isi_raport" method="POST">
                     <div class="form-group">
                         <label>Kelas:</label>
                         <select name="kelas" class="form-control" required>
                             <option value="">--pilih--</option>
                             <?php foreach($kelas->result() as $kelas){?>
                             <option value="<?=$kelas->idkelas?>"><?=$kelas->kodekelas?> - <?=$kelas->namakelas?></option>
-                            <?php }?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Mata Pelajaran:</label>
-                        <select name="mapel" class="form-control" required>
-                            <option value="">--pilih--</option>
-                            <?php foreach($mapel->result() as $mapel){?>
-                            <option value="<?=$mapel->idmapel?>"><?=$mapel->kodemapel?> - <?=$mapel->namamapel?></option>
                             <?php }?>
                         </select>
                     </div>

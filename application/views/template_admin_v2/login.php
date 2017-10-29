@@ -26,7 +26,8 @@
 		    <div class="row">
 		        <div class="col-md-offset-4 col-md-4 login-from" style="border:solid thin #eae7de">
 		            <h4>Aplikasi Raport</h4><hr/>
-		            <form id="login">
+		            <?=@$this->session->flashdata('msg')?>
+		            <form action="<?=base_url()?>login/proses_login" method="POST" id="login">
 		                <div class="form-group">
 		                    <label for="">Username</label>
 		                    <input id="username" type="text" class="form-control" name="username" placeholder="Username" required />

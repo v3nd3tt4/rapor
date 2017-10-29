@@ -4,7 +4,7 @@
             <div class="ibox-title">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2>Data Seluruh Siswa</h2>
+                        <h2>Isi Raport</h2>
                     </div>
                     <div class="col-md-4">
                         
@@ -39,14 +39,9 @@
                         <td><?=$kelas->row()->kompetensikeahlian?></td>
                     </tr>
                     <tr>
-                        <td>Nama Mata Pelajaran</td>
-                        <td>:</td>
-                        <td><?=$mapel->row()->kodemapel.' - '.$mapel->row()->namamapel?></td>
-                    </tr>
-                    <tr>
                         <td>Tahun Ajaran</td>
                         <td>:</td>
-                        <td><?=$tahunajaran?></td>
+                        <td><?=$ta?></td>
                     </tr>
                     <tr>
                         <td>Semester</td>
@@ -75,8 +70,7 @@
                             <td><?=$row->nis?></td>
                             <td><?=$row->namasiswa?></td>
                             <td>
-                                <a href="<?=base_url()?>nilai/lihat_nilai_siswa?id_siswa=<?=$row->idsiswa?>&id_kelas=<?=$kelas->row()->idkelas?>&idmapel=<?=$mapel->row()->idmapel?>&ta=<?=$tahunajaran?>&semester=<?=$semester?>" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> Lihat Nilai </a>  
-                                <a href="<?=base_url()?>nilai/isi_nilai_siswa?id_siswa=<?=$row->idsiswa?>&id_kelas=<?=$kelas->row()->idkelas?>&idmapel=<?=$mapel->row()->idmapel?>&ta=<?=$tahunajaran?>&semester=<?=$semester?>" target="_blank" class="btn btn-xs btn-danger"><i class="fa fa-pencil"></i> Isi Nilai </a>
+                                <a href="<?=base_url()?>nilai/isi_raport_siswa?idsiswa=<?=$row->idsiswa?>&ta=<?=$ta?>&semester=<?=$semester?>&idkelas=<?=$kelas->row()->idkelas?>" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Isi Raport </a>
                             </td>
                         </tr>
                         <?php } ?>
@@ -86,4 +80,3 @@
         </div>
     </div>
 </div>
-            

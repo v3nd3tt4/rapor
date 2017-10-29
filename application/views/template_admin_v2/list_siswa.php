@@ -4,7 +4,7 @@
             <div class="ibox-title">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2>Data Seluruh Siswa</h2>
+                        <h2>Riwayat Nilai</h2>
                     </div>
                     <div class="col-md-4">
                         
@@ -38,21 +38,6 @@
                         <td>:</td>
                         <td><?=$kelas->row()->kompetensikeahlian?></td>
                     </tr>
-                    <tr>
-                        <td>Nama Mata Pelajaran</td>
-                        <td>:</td>
-                        <td><?=$mapel->row()->kodemapel.' - '.$mapel->row()->namamapel?></td>
-                    </tr>
-                    <tr>
-                        <td>Tahun Ajaran</td>
-                        <td>:</td>
-                        <td><?=$tahunajaran?></td>
-                    </tr>
-                    <tr>
-                        <td>Semester</td>
-                        <td>:</td>
-                        <td><?=$semester?></td>
-                    </tr>
                 </table>
                 <hr/>
             	<?=@$this->session->flashdata('msg')?>
@@ -75,8 +60,7 @@
                             <td><?=$row->nis?></td>
                             <td><?=$row->namasiswa?></td>
                             <td>
-                                <a href="<?=base_url()?>nilai/lihat_nilai_siswa?id_siswa=<?=$row->idsiswa?>&id_kelas=<?=$kelas->row()->idkelas?>&idmapel=<?=$mapel->row()->idmapel?>&ta=<?=$tahunajaran?>&semester=<?=$semester?>" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> Lihat Nilai </a>  
-                                <a href="<?=base_url()?>nilai/isi_nilai_siswa?id_siswa=<?=$row->idsiswa?>&id_kelas=<?=$kelas->row()->idkelas?>&idmapel=<?=$mapel->row()->idmapel?>&ta=<?=$tahunajaran?>&semester=<?=$semester?>" target="_blank" class="btn btn-xs btn-danger"><i class="fa fa-pencil"></i> Isi Nilai </a>
+                                <a href="<?=base_url()?>nilai/nilai_per_siswa?idsiswa=<?=$row->idsiswa?>" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> Cek </a>
                             </td>
                         </tr>
                         <?php } ?>
@@ -86,4 +70,3 @@
         </div>
     </div>
 </div>
-            

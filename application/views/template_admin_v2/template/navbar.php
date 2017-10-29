@@ -15,9 +15,9 @@
                 </li>
              
                 <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                   <!--  <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell"></i>  <span class="label label-primary"></span>
-                    </a>
+                    </a> -->
                     <ul class="dropdown-menu dropdown-alerts">
                         <li>
                             <a href="#">
@@ -33,7 +33,7 @@
 
 
                 <li>
-                    <a href="<?=base_url()?>adminNew/home/logout">
+                    <a href="<?=base_url()?>login/logout">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>

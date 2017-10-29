@@ -8,11 +8,13 @@ class kelas extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		// if($this->session->userdata('username')==""){
-		// 	echo '<script>alert("Anda harus login terlebih dahulu");</script>';
-		// 	echo '<script>window.location.href = "'.base_url().'";</script>';
-		// }
-		// $this->load->model('M_posting');
+		if($this->session->userdata('status') != 'login'){
+			echo '<script>alert("Anda harus login terlebih dahulu");</script>';
+			echo '<script>window.location.href = "'.base_url().'";</script>';
+		}else if($this->session->userdata('level') != 'pegawai'){
+			echo '<script>alert("Anda tidak diizinkan mengakses halaman ini");</script>';
+			echo '<script>window.location.href = "'.base_url().'";</script>';
+		}
 	}
 
 	public function index(){
