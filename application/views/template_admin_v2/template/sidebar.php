@@ -56,6 +56,10 @@
                     <span class="nav-label">Cetak & Lihat Raport</span></a>
                 </li>
                 <?php }else if($this->session->userdata('level') == 'pegawai'){ ?>
+                <li <?php  if($link == 'home'){?>class="active" <?php }?>>
+                    <a href="<?=base_url()?>home"><i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="nav-label">Dashboard</span></a>
+                </li>
                 <li <?php  if($link == 'guru'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>home/guru"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <span class="nav-label">Guru</span><!-- <span class="fa arrow"></span> --></a>
                     <!-- <ul class="nav nav-second-level collapse">
@@ -96,6 +100,10 @@
                 <li <?php  if($link == 'siswa'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>siswa_user"><i class="fa fa-home" aria-hidden="true"></i>
                     <span class="nav-label">Dashboard</span></a>
+                </li>
+                 <li <?php  if($link == 'raport'){?>class="active" <?php }?>>
+                    <a href="<?=base_url()?>siswa_user/raport"><i class="fa fa-eye" aria-hidden="true"></i>
+                    <span class="nav-label">Raport</span></a>
                 </li>
                 <?php } ?>
             </ul>

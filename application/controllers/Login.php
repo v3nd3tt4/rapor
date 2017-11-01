@@ -100,7 +100,7 @@ class Login extends CI_Controller {
 				if($cocok){
 					$sess_data['status'] = 'login';
 					//$sess_data['id']=$sess->id;
-					$sess_data['idpegawai'] = $cek->row()->idsiswa;
+					$sess_data['idsiswa'] = $cek->row()->idsiswa;
 					$sess_data['username'] = $cek->row()->username;
 					$sess_data['nama'] = $cek->row()->namasiswa;
 					$sess_data['level'] = 'siswa';

@@ -20,7 +20,8 @@ class Home extends CI_Controller {
 	public function index(){
 		$data = array(
 			'page' => 'template_admin_v2/dashboard',
-			'link' => 'home'
+			'link' => 'home',
+			'pegawai' => $this->db->get_where('tb_pegawai', array('idpegawai' => $this->session->userdata('idpegawai')))
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
 	}
