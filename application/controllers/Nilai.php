@@ -517,6 +517,11 @@ class Nilai extends CI_Controller {
 		$kelas = $this->input->get('idkelas', true);
 		$siswa = $this->db->get_where('tb_siswa', array('idsiswa' => $idsiswa));
 
+		$this->db->from('vw_nilai');
+		$this->db->where(array('nis' => $siswa->row()->nis));
+		$this->db->group_by('thnajaran, semester');
+		$data = $this->db->get();
+
 		// $data = $this->db->get_where('tb_siswa', array('idsiswa' => $this->db->get('idsiswa', true)));
 
 		$data = array(
@@ -527,7 +532,7 @@ class Nilai extends CI_Controller {
 			'idsiswa' => $idsiswa,
 			'ta' => $ta,
 			'semester' => $semester,
-			'data' => $this->db->get_where('vw_nilai', array('nis' => $siswa->row()->nis))
+			'data' => $data
 			
 		);
 		$this->load->view('template_admin_v2/template/wrapper', $data);
