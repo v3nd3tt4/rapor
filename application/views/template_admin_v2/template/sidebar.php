@@ -51,6 +51,10 @@
                     <a href="<?=base_url()?>nilai/isi_raport"><i class="fa fa-book" aria-hidden="true"></i>
                     <span class="nav-label">Isi Raport</span></a>
                 </li>
+                <li <?php  if($link == 'lihat_raport'){?>class="active" <?php }?>>
+                    <a href="<?=base_url()?>nilai/lihat_raport"><i class="fa fa-eye" aria-hidden="true"></i>
+                    <span class="nav-label">Cetak & Lihat Raport</span></a>
+                </li>
                 <?php }else if($this->session->userdata('level') == 'pegawai'){ ?>
                 <li <?php  if($link == 'guru'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>home/guru"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <span class="nav-label">Guru</span><!-- <span class="fa arrow"></span> --></a>

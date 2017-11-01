@@ -21,7 +21,8 @@ class Guru extends CI_Controller {
 	public function index(){		
 		$data = array(
 			'page' => 'template_admin_v2/guru/dashboard_guru',
-			'link' => 'guru'
+			'link' => 'guru',
+			'guru' => $this->db->get_where('tb_guru', array('idguru' => $this->session->userdata('idguru')))
 		);
 
 		$this->load->view('template_admin_v2/template/wrapper', $data);
