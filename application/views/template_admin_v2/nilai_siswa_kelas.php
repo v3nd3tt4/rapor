@@ -75,8 +75,15 @@
                             <td><?=$row->nis?></td>
                             <td><?=$row->namasiswa?></td>
                             <td>
-                                <a href="<?=base_url()?>nilai/lihat_nilai_siswa?id_siswa=<?=$row->idsiswa?>&id_kelas=<?=$kelas->row()->idkelas?>&idmapel=<?=$mapel->row()->idmapel?>&ta=<?=$tahunajaran?>&semester=<?=$semester?>" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> Lihat Nilai </a>  
+                                <?php 
+                                $cek_niliai = $this->db->get_where('tb_nilai', array('nis' => $row->nis, 'kodemapel' => $mapel->row()->kodemapel, 'thnajaran' => $tahunajaran, 'semester' => $semester));
+                                if($cek_niliai->num_rows() != 0){
+                                ?>
+
+                                <a href="<?=base_url()?>nilai/lihat_nilai_siswa?id_siswa=<?=$row->idsiswa?>&id_kelas=<?=$kelas->row()->idkelas?>&idmapel=<?=$mapel->row()->idmapel?>&ta=<?=$tahunajaran?>&semester=<?=$semester?>" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i> Lihat Nilai </a> 
+                                <?php }else{?> 
                                 <a href="<?=base_url()?>nilai/isi_nilai_siswa?id_siswa=<?=$row->idsiswa?>&id_kelas=<?=$kelas->row()->idkelas?>&idmapel=<?=$mapel->row()->idmapel?>&ta=<?=$tahunajaran?>&semester=<?=$semester?>" target="_blank" class="btn btn-xs btn-danger"><i class="fa fa-pencil"></i> Isi Nilai </a>
+                                <?php }?>
                             </td>
                         </tr>
                         <?php } ?>

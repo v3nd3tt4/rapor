@@ -96,7 +96,7 @@
                         <select name="guru" class="form-control" required>
                             <option value="">--pilih--</option>
                             <?php foreach($guru->result() as $guru){?>
-                            <option value="<?=$guru->kodeguru?>" <?=$cek_nilai->row()->kodeguru ? 'selected' : ''?>><?=$guru->kodeguru?> - <?=$guru->namaguru?></option>
+                            <option value="<?=$guru->kodeguru?>" <?=$cek_nilai->row()->kodeguru == $guru->kodeguru? 'selected' : ''?>><?=$guru->kodeguru?> - <?=$guru->namaguru?></option>
                             <?php }?>
                         </select>
                     </div>

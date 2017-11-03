@@ -38,6 +38,7 @@ class Nilai extends CI_Controller {
 		$this->db->where(array('idkelas' => $kelas));
 		$this->db->order_by('namasiswa', 'ASC');
 		$siswa = $this->db->get();
+		
 		$data = array(
 			'page' => 'template_admin_v2/nilai_siswa_kelas',
 			'link' => 'nilai',
