@@ -29,7 +29,7 @@
                 <?php if($this->session->userdata('level') == 'guru'){
                 ?>
                 <li <?php  if($link == 'guru'){?>class="active" <?php }?>>
-                    <a href="<?=base_url()?>guru"><i class="fa fa-home" aria-hidden="true"></i> <span class="nav-label">Dashboard</span><!-- <span class="fa arrow"></span> --></a>
+                    <a href="<?=base_url()?>guru"><i class="fa fa-home" aria-hidden="true"></i> <span class="nav-label">Profil</span><!-- <span class="fa arrow"></span> --></a>
                     <!-- <ul class="nav nav-second-level collapse">
                         <li><a href="transaction.html">Used Oil</a></li>
                         <li><a href="newoil.html">New Oil, Fuel & Others</a></li>
@@ -99,7 +99,7 @@
                 <?php }if($this->session->userdata('level') == 'siswa'){ ?>
                 <li <?php  if($link == 'siswa'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>siswa_user"><i class="fa fa-home" aria-hidden="true"></i>
-                    <span class="nav-label">Dashboard</span></a>
+                    <span class="nav-label">Profil</span></a>
                 </li>
                  <li <?php  if($link == 'raport'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>siswa_user/raport"><i class="fa fa-eye" aria-hidden="true"></i>

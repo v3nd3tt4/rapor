@@ -1,6 +1,6 @@
     		  <div class="footer">
                 <div>
-                    <strong>Copyright</strong> Pilopa &copy; 2017
+                    
                 </div>
             </div>
 

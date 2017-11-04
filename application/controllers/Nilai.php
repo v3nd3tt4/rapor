@@ -19,10 +19,11 @@ class Nilai extends CI_Controller {
 	}
 
 	public function index(){		
+		// $this->db->get_where('tb_kelas', array('namawalikelas' => $this->session->userdata('idguru')))
 		$data = array(
 			'page' => 'template_admin_v2/dashboard_nilai',
 			'link' => 'nilai',
-			'kelas' => $this->db->get_where('tb_kelas', array('namawalikelas' => $this->session->userdata('idguru'))),
+			'kelas' => $this->db->get('tb_kelas'),
 			'mapel' => $this->db->get('tb_mapel')
 		);
 
@@ -160,10 +161,12 @@ class Nilai extends CI_Controller {
 	}
 
 	public function riwayat_nilai(){
+		// $this->db->get_where('tb_kelas', array('namawalikelas' => $this->session->userdata('idguru')))
+		
 		$data = array(
 			'page' => 'template_admin_v2/riwayat_nilai',
 			'link' => 'riwayat_nilai',
-			'kelas' => $this->db->get_where('tb_kelas', array('namawalikelas' => $this->session->userdata('idguru'))),
+			'kelas' => $this->db->get('tb_kelas'),
 		);
 
 		$this->load->view('template_admin_v2/template/wrapper', $data);
