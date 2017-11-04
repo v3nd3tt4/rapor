@@ -41,7 +41,7 @@
 		                    <select class="form-control" name="rule" required>
 		                    	<option value="">--pilih--</option>
 		                    	<option value="guru">Guru</option>
-		                    	<option value="staff">Staff</option>
+		                    	<option value="staff">Pegawai</option>
 		                    	<option value="siswa">Siswa</option>
 		                    </select>
 		                </div>
