@@ -189,7 +189,9 @@
                             <td><?=$nilai_normatif->kkm?></td>
                             <td><?=number_format($nilai_normatif->nr)?></td>
                             <td><?=$this->M_admin->terbilang(number_format($nilai_normatif->nr))?></td>
-                            <td></td>
+                            <td>
+                                <?php echo $this->M_admin->cek_predikat($this->session->userdata('idguru'), $nilai_normatif->nr);?>
+                            </td>
                             <td><?=$nilai_normatif->deskripsi?></td>
                         </tr>
                         <?php } 
@@ -265,7 +267,9 @@
                             <td><?=$nilai_adaptif->kkm?></td>
                             <td><?=number_format($nilai_adaptif->nr)?></td>
                             <td><?=$this->M_admin->terbilang(number_format($nilai_adaptif->nr))?></td>
-                            <td></td>
+                            <td>
+                                <?php echo $this->M_admin->cek_predikat($this->session->userdata('idguru'), $nilai_normatif->nr);?>
+                            </td>
                             <td><?=$nilai_adaptif->deskripsi?></td>
                         </tr>
                         <?php }
@@ -342,7 +346,9 @@
                             <td><?=$nilai_produktif->kkm?></td>
                             <td><?=number_format($nilai_produktif->nr)?></td>
                             <td><?=$this->M_admin->terbilang(number_format($nilai_produktif->nr))?></td>
-                            <td></td>
+                            <td>
+                                <?php echo $this->M_admin->cek_predikat($this->session->userdata('idguru'), $nilai_normatif->nr);?>
+                            </td>
                             <td><?=$nilai_produktif->deskripsi?></td>
                         </tr>
                         <?php } 
@@ -418,7 +424,7 @@
                             <td><?=$nilai_mulok->kkm?></td>
                             <td><?=number_format($nilai_mulok->nr)?></td>
                             <td><?=$this->M_admin->terbilang(number_format($nilai_mulok->nr))?></td>
-                            <td></td>
+                            <td><?php echo $this->M_admin->cek_predikat($this->session->userdata('idguru'), $nilai_normatif->nr);?></td>
                             <td><?=$nilai_mulok->deskripsi?></td>
                         </tr>
                         <?php } 
