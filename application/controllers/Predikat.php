@@ -11,7 +11,7 @@ class Predikat extends CI_Controller {
 		if($this->session->userdata('status') != 'login'){
 			echo '<script>alert("Anda harus login terlebih dahulu");</script>';
 			echo '<script>window.location.href = "'.base_url().'";</script>';
-		}else if($this->session->userdata('level') != 'pegawai'){
+		}else if($this->session->userdata('level') != 'guru'){
 			echo '<script>alert("Anda tidak diizinkan mengakses halaman ini");</script>';
 			echo '<script>window.location.href = "'.base_url().'";</script>';
 		}
@@ -46,9 +46,10 @@ class Predikat extends CI_Controller {
 		// 	redirect(base_url().'siswa/tambah_siswa'); //location
 		// 	exit();
 		// }
-
 		$data = array(
-			'angka' => $this->input->post('angka', true),	 
+			'idguru' => $this->session->userdata('idguru'),
+			'nilaiatas' => $this->input->post('nilaiatas', true),
+			'nilaibawah' => $this->input->post('nilaibawah', true),	 
 			'huruf'	 => $this->input->post('huruf', true),	 
 			'predikat'  => $this->input->post('predikat', true),
 		);
@@ -99,7 +100,9 @@ class Predikat extends CI_Controller {
 
 	public function update_predikat(){
 		$data = array(
-			'angka' => $this->input->post('angka', true),	 
+			'idguru' => $this->session->userdata('idguru'),
+			'nilaiatas' => $this->input->post('nilaiatas', true),
+			'nilaibawah' => $this->input->post('nilaibawah', true),	 
 			'huruf'	 => $this->input->post('huruf', true),	 
 			'predikat'  => $this->input->post('predikat', true),
 		);

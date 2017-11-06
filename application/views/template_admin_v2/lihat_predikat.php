@@ -19,8 +19,12 @@
             	<?=@$this->session->flashdata('msg')?>
                 <input type="hidden" name="idpredikat" value="<?=$list->row()->idpredikat?>" />
                 <div class="form-group">
-                    <label>Angka:</label>
-                    <input type="text" name="angka" class="form-control" value="<?=$list->row()->angka?>" required />
+                    <label>Nilai Atas:</label>
+                    <input type="text" name="nilaiatas" class="form-control" value="<?=$list->row()->nilaiatas?>" required />
+                </div>
+                <div class="form-group">
+                    <label>Nilai Bawah:</label>
+                    <input type="text" name="nilaibawah" class="form-control" value="<?=$list->row()->nilaibawah?>" required />
                 </div>
                 <div class="form-group">
                     <label>Huruf:</label>

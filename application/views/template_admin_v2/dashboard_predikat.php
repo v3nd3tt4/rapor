@@ -17,7 +17,8 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Angka</th>
+                            <th>Nilai Atas</th>
+                            <th>Nilai Bawah</th>
                             <th>Huruf</th>
                             <th>Predikat</th>
                             <th>aksi</th>
@@ -30,7 +31,8 @@
                         ?>                        
                         <tr>
                             <td><?=$no++?>.</td>
-                            <td><?=$row->angka?></td>
+                            <td><?=$row->nilaiatas?></td>
+                            <td><?=$row->nilaibawah?></td>
                             <td><?=$row->huruf?></td>
                             <td><?=$row->predikat?></td>
                             <td>

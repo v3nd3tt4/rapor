@@ -18,8 +18,12 @@
             <div class="ibox-content">
             	<?=@$this->session->flashdata('msg')?>
                 <div class="form-group">
-                    <label>Angka:</label>
-                    <input type="text" name="angka" class="form-control" value="<?=isset($_POST['angka']) ? $_POST['angka'] : '' ?>" required />
+                    <label>Nilai Atas:</label>
+                    <input type="text" name="nilaiatas" class="form-control" value="<?=isset($_POST['angka']) ? $_POST['angka'] : '' ?>" required />
+                </div>
+                <div class="form-group">
+                    <label>Nilai Bawah:</label>
+                    <input type="text" name="nilaibawah" class="form-control" value="<?=isset($_POST['angka']) ? $_POST['angka'] : '' ?>" required />
                 </div>
                 <div class="form-group">
                     <label>Huruf:</label>

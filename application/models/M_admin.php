@@ -171,4 +171,9 @@ class M_admin extends CI_Model{
 
 	} 
 
+	public function cek_predikat($idguru, $nilai){
+		$query = $this->db->query("select * from tb_predikat where idguru='".$idguru."' and nilaiatas < $nilai and nilaibawah > $nilai");
+		return $query;
+	}
+
 }

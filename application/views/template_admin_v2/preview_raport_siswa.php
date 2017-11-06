@@ -126,7 +126,9 @@
                                 <td><?=$nilai_normatif->kkm?></td>
                                 <td><?=number_format($nilai_normatif->nr)?></td>
                                 <td><?=$this->M_admin->terbilang(number_format($nilai_normatif->nr))?></td>
-                                <td></td>
+                                <td>
+                                    <?php var_dump($this->M_admin->cek_predikat($this->session->userdata('idguru'), $nilai_normatif->nr)->result());?>
+                                </td>
                                 <td><?=$nilai_normatif->deskripsi?></td>
                             </tr>
                             <?php } ?>

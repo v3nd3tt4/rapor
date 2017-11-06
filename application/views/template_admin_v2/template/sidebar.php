@@ -39,6 +39,9 @@
                         <li><a href="mcomparation.html">Machine Comparation</a></li>
                     </ul> -->
                 </li>
+                <li <?php  if($link == 'predikat'){?>class="active" <?php }?>>
+                    <a href="<?=base_url()?>predikat"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span class="nav-label">Predikat</span></a>
+                </li>
                 <li <?php  if($link == 'nilai'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>nilai"><i class="fa fa-pencil" aria-hidden="true"></i>
                     <span class="nav-label">Isi Nilai</span></a>
@@ -83,10 +86,7 @@
                     <a href="<?=base_url()?>kelas"><i class="fa fa-university" aria-hidden="true"></i>
  <span class="nav-label">kelas</span></a>
                 </li>
-                <li <?php  if($link == 'predikat'){?>class="active" <?php }?>>
-                    <a href="<?=base_url()?>predikat"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
- <span class="nav-label">Predikat</span></a>
-                </li>
+                
                 <li <?php  if($link == 'mapel'){?>class="active" <?php }?>>
                     <a href="<?=base_url()?>mapel"><i class="fa fa-folder-open" aria-hidden="true"></i>
  <span class="nav-label">Mata Pelajaran</span></a>
