@@ -28,7 +28,7 @@
                             <td><?=$row->thnajaran?></td>
                             <td><?=$row->semester?></td>
                             <td>
-                                <a href="<?=base_url()?>siswa_user/cetak_raport_siswa?idsiswa=<?=$siswa->row()->idsiswa?>&idkelas=<?=$kelas->row()->idkelas?>&semester=<?=$row->semester?>&ta=<?=$row->thnajaran?>" target="_blank" class="btn btn-xs btn-danger"><i class="fa fa-print"></i> lihat & Cetak </a>
+                                <a href="<?=base_url()?>siswa_user/cetak_raport_siswa?idsiswa=<?=$siswa->row()->idsiswa?>&idkelas=<?=$kelas->row()->idkelas?>&semester=<?=$row->semester?>&ta=<?=$row->thnajaran?>" target="_blank" class="btn btn-xs btn-danger"><i class="fa fa-eye"></i> lihat </a>
                             </td>
                         </tr>
                         <?php }?>
