@@ -190,7 +190,7 @@
                             <td><?=number_format($nilai_normatif->nr)?></td>
                             <td><?=$this->M_admin->terbilang(number_format($nilai_normatif->nr))?></td>
                             <td>
-                                <?php echo $this->M_admin->cek_predikat($guru->row()->idguru, $nilai_normatif->nr);?>
+                                <?php echo @$this->M_admin->cek_predikat($guru->row()->idguru, $nilai_normatif->nr);?>
                             </td>
                             <td><?=$nilai_normatif->deskripsi?></td>
                         </tr>
@@ -268,7 +268,7 @@
                             <td><?=number_format($nilai_adaptif->nr)?></td>
                             <td><?=$this->M_admin->terbilang(number_format($nilai_adaptif->nr))?></td>
                             <td>
-                                <?php echo $this->M_admin->cek_predikat($guru->row()->idguru, $nilai_normatif->nr);?>
+                                <?php echo @$this->M_admin->cek_predikat($guru->row()->idguru, $nilai_normatif->nr);?>
                             </td>
                             <td><?=$nilai_adaptif->deskripsi?></td>
                         </tr>
@@ -347,7 +347,7 @@
                             <td><?=number_format($nilai_produktif->nr)?></td>
                             <td><?=$this->M_admin->terbilang(number_format($nilai_produktif->nr))?></td>
                             <td>
-                                <?php echo $this->M_admin->cek_predikat($guru->row()->idguru, $nilai_normatif->nr);?>
+                                <?php echo @$this->M_admin->cek_predikat($guru->row()->idguru, $nilai_normatif->nr);?>
                             </td>
                             <td><?=$nilai_produktif->deskripsi?></td>
                         </tr>
@@ -425,7 +425,7 @@
                             <td><?=number_format($nilai_mulok->nr)?></td>
                             <td><?=$this->M_admin->terbilang(number_format($nilai_mulok->nr))?></td>
                             <td>
-                                <?php echo $this->M_admin->cek_predikat($guru->row()->idguru, $nilai_normatif->nr);?>
+                                <?php echo @$this->M_admin->cek_predikat($guru->row()->idguru, $nilai_normatif->nr);?>
                             </td>
                             <td><?=$nilai_mulok->deskripsi?></td>
                         </tr>
