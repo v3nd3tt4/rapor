@@ -479,7 +479,13 @@
                     <tr>
                         <td><b>Peringkat </b></td>
                         <td>:</td>
-                        <td><b></b> ... Dari <?=count($total_siswa->result())?> Siswa</td>
+                        <td><b></b>
+                        <?php $rank = 0; foreach($ranking->result() as $ranking){
+                            if($ranking->nis == $siswa->row()->nis){
+                                $rank = $ranking->ranking;
+                            }
+                         }?>
+                         <b><?=$rank?></b> Dari <?=count($total_siswa->result())?> Siswa</td>
                     </tr>
                     </table>
                     <br/><br/>

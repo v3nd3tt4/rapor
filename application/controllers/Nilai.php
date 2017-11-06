@@ -643,6 +643,9 @@ class Nilai extends CI_Controller {
 		$total_nilai = $this->db->query("select count(*) as total_nilai from vw_nilai where nis = '".$siswa->row()->nis."' and thnajaran = '".$ta."' and semester = '".$semester."' ");
 
 		$total_siswa = $this->db->get_where('tb_siswa', array('idkelas' => $this->input->get('idkelas', true)));
+
+		$ranking = $this->db->query("select nis, sum(nr) as nr, (@curRank:=@curRank +1) as ranking from vw_nilai, (SELECT @curRank := 0) r where thnajaran = '".$ta."' and semester = '".$semester."' group by nis order by sum(nr) desc");
+
 		$data = array(
 			// 'page' => 'template_admin_v2/cetak_raport_siswa',
 			// 'link' => 'lihat_raport',
@@ -662,7 +665,8 @@ class Nilai extends CI_Controller {
 			'guru' => $this->db->get_where('tb_guru', array('idguru' => $kelas->row()->namawalikelas)),
 			'jumlah_nilai' => $jumlah,
 			'total_nilai' => $total_nilai,
-			'total_siswa' => $total_siswa
+			'total_siswa' => $total_siswa,
+			'ranking' => $ranking
 		);
 		$this->load->view('template_admin_v2/cetak_raport_siswa', $data);
 	}
