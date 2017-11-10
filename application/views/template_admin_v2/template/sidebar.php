@@ -3,8 +3,13 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
+                            
+                            <?php if($this->session->userdata('status') != ''){?>
                             <img alt="image" class="img-circle" width="100px" src="<?=base_url()?>assets/images/user_fb.jpeg" />
-                             </span>
+                            <?php }else{?>
+                            <img alt="image" class="img-circle" width="100px" src="<?=base_url()?>assets/images/logo.jpg" />
+                            <?php }?>
+                            </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?=$this->session->userdata('nama')?></strong>
                             </span> 
@@ -106,6 +111,12 @@
                     <span class="nav-label">Raport</span></a>
                 </li>
                 <?php } ?>
+                <?php if($this->session->userdata('status') == ''){ ?>
+                <li>
+                    <a href="<?=base_url()?>"><i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="nav-label">Dashboard</span></a>
+                </li>
+                <?php }?>
             </ul>
         </div>
     </nav>

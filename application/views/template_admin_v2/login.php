@@ -37,7 +37,7 @@
 		                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" required />
 		                </div>
 		                <div class="form-group">
-		                    <label for="">Rule (Guru, Staff, Siswa)</label>
+		                    <label for="">Rule (Guru, Pegawai, Siswa)</label>
 		                    <select class="form-control" name="rule" required>
 		                    	<option value="">--pilih--</option>
 		                    	<option value="guru">Guru</option>
@@ -45,8 +45,9 @@
 		                    	<option value="siswa">Siswa</option>
 		                    </select>
 		                </div>
-		                <div class="text-right">
+		                <div>
 		                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Login</button>
+		                    Halaman utama, klik <a href="<?=base_url()?>">disini</a>
 		                </div>
 		            </form>
 		            <br />     

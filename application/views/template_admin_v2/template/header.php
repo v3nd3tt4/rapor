@@ -16,6 +16,7 @@
     <link href="<?=base_url()?>assets/assets/css/plugins/chartist/chartist.min.css" rel="stylesheet">
 
     <link href="<?=base_url()?>assets/assets/css/animate.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/jquery.bxslider.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/assets/css/style.css" rel="stylesheet">
     
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dataTable/css/dataTables.bootstrap.css"/>
