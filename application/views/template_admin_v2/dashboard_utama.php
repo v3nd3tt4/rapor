@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="col-md-9">
-                        <h2>SMA BUDIKARYA NATAR</h2>
+                        <h2>SMK BUDIKARYA NATAR</h2>
                         <hr/>
                         <table class="table table-striped">
                             <tr>
