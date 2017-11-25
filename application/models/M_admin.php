@@ -172,8 +172,13 @@ class M_admin extends CI_Model{
 	} 
 
 	public function cek_predikat($idguru, $nilai){
-		$query = $this->db->query("select * from tb_predikat where idguru='".$idguru."' and $nilai between nilaibawah and $nilai");
-		return $query->row()->predikat;
+		$query = $this->db->query("select * from tb_predikat where idguru = '".$idguru."'");
+		if($query->num_rows() == 0){
+			return "Guru belum membuat predikat";
+		}else{
+			$query = $this->db->query("select * from tb_predikat where idguru='".$idguru."' and $nilai between nilaibawah and $nilai");
+			return $query->row()->predikat;
+		}
 	}
 
 }
