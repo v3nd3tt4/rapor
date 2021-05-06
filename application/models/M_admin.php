@@ -176,7 +176,9 @@ class M_admin extends CI_Model{
 		if($query->num_rows() == 0){
 			return "Guru belum membuat predikat";
 		}else{
-			$query = $this->db->query("select * from tb_predikat where idguru='".$idguru."' and '".$nilai."' between nilaibawah and '".$nilai."'");
+			$query = $this->db->query("SELECT * 
+			FROM `tb_predikat` 
+			WHERE idguru = '$idguru' AND (`nilaibawah` < $nilai AND `nilaiatas` >= $nilai)");
 			return $query->row()->predikat;
 		}
 	}

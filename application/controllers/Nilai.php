@@ -190,7 +190,7 @@ class Nilai extends CI_Controller {
 	public function nilai_per_siswa(){
 		$id_siswa = $this->input->get('idsiswa', true);
 		$siswa = $this->db->get_where('tb_siswa', array('idsiswa' => $id_siswa));
-		$kelas = $this->db->get_where('tb_kelas', array('idkelas' => $siswa->row()->idsiswa));
+		$kelas = $this->db->get_where('tb_kelas', array('idkelas' => $siswa->row()->idkelas));
 		$this->db->from('tb_nilai');
 		$this->db->join('tb_mapel', 'tb_nilai.kodemapel = tb_mapel.kodemapel');
 		$this->db->where(array('nis' => $siswa->row()->nis));
@@ -669,6 +669,10 @@ class Nilai extends CI_Controller {
 			'ranking' => $ranking
 		);
 		$this->load->view('template_admin_v2/cetak_raport_siswa', $data);
+	}
+
+	public function tes(){
+		echo $this->M_admin->cek_predikat($this->session->userdata('idguru'), 79);
 	}
 
 }
