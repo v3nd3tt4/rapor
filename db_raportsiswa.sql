@@ -1,15 +1,4 @@
 -- Adminer 4.8.1 MySQL 8.0.29 dump
-
-SET NAMES utf8;
-SET time_zone = '+00:00';
-SET foreign_key_checks = 0;
-SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
-
-SET NAMES utf8mb4;
-
-CREATE DATABASE `db_raportsiswa` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_raportsiswa`;
-
 DROP TABLE IF EXISTS `tb_catatan`;
 CREATE TABLE `tb_catatan` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -19,7 +8,7 @@ CREATE TABLE `tb_catatan` (
   `catatan` text,
   PRIMARY KEY (`id`),
   KEY `FK_tb_catatan` (`nis`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_catatan` (`id`, `nis`, `thnajaran`, `semester`, `catatan`) VALUES
 (1,	'SIS001',	'2017/2018',	'1 - ganjil',	'Pengawasan terhadap belajar anak di rumah'),
@@ -42,7 +31,7 @@ CREATE TABLE `tb_guru` (
   `password` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idguru`),
   UNIQUE KEY `NewIndex1` (`kodeguru`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_guru` (`idguru`, `kodeguru`, `namaguru`, `alamat`, `telp`, `jk`, `statuskepegawaian`, `jenisptk`, `agama`, `tempatlahir`, `tgllahir`, `username`, `password`) VALUES
 (1,	'GUR001',	'Rahman Indra',	'jhgfd',	'0987654',	'Pria',	'Aktif',	'PNS',	'Islam',	'PU',	'1991-06-19',	'guru',	'$2y$10$CfSyFMmi8aGq8Bq7g7GyduJw1TBmZciQbrqoCMDKB/ioHTx4Z1lLK');
@@ -60,7 +49,7 @@ CREATE TABLE `tb_kegiatan` (
   `predikat` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idkegiatan`),
   KEY `FK_tb_kegiatan` (`nis`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_kegiatan` (`idkegiatan`, `nis`, `thnajaran`, `semester`, `namadu`, `alamat`, `lamadanwaktu`, `nilai`, `predikat`) VALUES
 (3,	'SIS001',	'2017/2018',	'1 - ganjil',	'jsjsdj',	'djjdj',	'jdjd',	80,	'dxmxd'),
@@ -77,7 +66,7 @@ CREATE TABLE `tb_kelas` (
   `namawalikelas` varchar(40) DEFAULT NULL,
   `semester` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`idkelas`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_kelas` (`idkelas`, `kodekelas`, `namakelas`, `bidangstudi`, `programstudikeahlian`, `kompetensikeahlian`, `namawalikelas`, `semester`) VALUES
 (1,	'OT001',	'Otomotif 1',	'Mesin',	'Teknik Mesin',	'Mesin Kendaraan Besar',	'1',	'1');
@@ -96,7 +85,7 @@ CREATE TABLE `tb_kepribadian` (
   `kategori` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_tb_kepribadian` (`nis`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_kepribadian` (`id`, `nis`, `thajaran`, `semester`, `kelakuan`, `kerajinan`, `kerapian`, `komponen`, `predikat`, `kategori`) VALUES
 (6,	'SIS001',	'2017/2018',	'1 - ganjil',	NULL,	NULL,	NULL,	'kelakuan',	'Baik',	'kepribadian'),
@@ -121,7 +110,7 @@ CREATE TABLE `tb_mapel` (
   `namamapel` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`idmapel`),
   UNIQUE KEY `NewIndex1` (`kodemapel`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_mapel` (`idmapel`, `kodemapel`, `kategorimapel`, `namamapel`) VALUES
 (1,	'MTK 001',	'normatif',	'Matematika');
@@ -148,7 +137,7 @@ CREATE TABLE `tb_nilai` (
   KEY `FK_tb_nilai` (`nis`),
   KEY `FK_tb_nilai1` (`kodemapel`),
   KEY `FK_tb_nilai2` (`kodeguru`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_nilai` (`idnilai`, `nis`, `kodemapel`, `kodeguru`, `thnajaran`, `semester`, `sk7`, `sk8`, `sk9`, `sk10`, `uts`, `us`, `afaktif`, `psycom`, `kkm`, `deskripsi`) VALUES
 (5,	'SIS001',	'MTK 001',	'GUR001',	'2017/2018',	'1 - ganjil',	91,	91,	91,	91,	91,	91,	91,	91,	91,	'-'),
@@ -169,7 +158,7 @@ CREATE TABLE `tb_pegawai` (
   `username` varchar(30) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idpegawai`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_pegawai` (`idpegawai`, `kodepegawai`, `namapegawai`, `alamat`, `telp`, `jk`, `agama`, `tempatlahir`, `tgllahir`, `divisi`, `username`, `password`) VALUES
 (1,	'PEG001',	'Ega Budiman',	'Way Halim',	'09876543',	'Pria',	'Islam',	'Way Halim',	'1989-07-05',	'Kurikulum',	'pegawai',	'$2y$10$5.kAbD9OdRyeVTORELD0q.IVPdJJMN96u6n8ND7qAE7vD0zVEg5ky');
@@ -184,7 +173,7 @@ CREATE TABLE `tb_predikat` (
   `nilaiatas` varchar(255) DEFAULT NULL,
   `nilaibawah` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idpredikat`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_predikat` (`idpredikat`, `angka`, `huruf`, `predikat`, `idguru`, `nilaiatas`, `nilaibawah`) VALUES
 (1,	NULL,	'E',	'Buruk',	1,	'50',	'0'),
@@ -206,7 +195,7 @@ CREATE TABLE `tb_presensi` (
   `jumlah` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_tb_presensi` (`nis`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_presensi` (`id`, `nis`, `thajaran`, `semester`, `izin`, `sakit`, `tanpaketerangan`, `jenis`, `jumlah`) VALUES
 (4,	'SIS001',	'2017/2018',	'1 - ganjil',	NULL,	NULL,	NULL,	'sakit',	'0'),
@@ -241,7 +230,7 @@ CREATE TABLE `tb_siswa` (
   PRIMARY KEY (`idsiswa`),
   UNIQUE KEY `NewIndex1` (`nis`),
   KEY `FK_tb_siswa` (`idkelas`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 INSERT INTO `tb_siswa` (`idsiswa`, `nis`, `namasiswa`, `tempatlahir`, `tgllahir`, `agama`, `jk`, `alamat`, `namaayah`, `namaibu`, `namawali`, `pekerjaanayah`, `pekerjaanibu`, `pekerjaanwali`, `asalsekolah`, `tglmasuksekolah`, `telpayah`, `idkelas`, `username`, `password`) VALUES
 (1,	'SIS001',	'Arief Apriandi',	'Kemiling',	'1989-02-09',	'Islam',	'Pria',	'KEmiling',	'Rajif',	'Restu',	'-',	'Programmer',	'Pengajar',	'-',	'SMA N 1 Palembang',	'2016-02-09',	'0987654321',	1,	'siswa',	'$2y$10$OvqIU3wmEpWYtkybxaP18.BStLqJsrDEK8yjrEpkuIbVYKXvbZAeO'),
